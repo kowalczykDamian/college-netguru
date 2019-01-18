@@ -1,0 +1,8 @@
+
+<h3><%= @quote.content %></h3>
+
+<%= button_to "Return", quotes_path, class: "btn btn-secondary", method: :get %>
+<%= button_to "Edit", edit_quote_path(@quote), class: "btn btn-primary", method: :get %>
+<%= button_to "Delete", quote_path(@quote), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?'} %>
+
+<i>Last updated: <%= @quote.updated_at %></i>

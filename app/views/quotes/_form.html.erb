@@ -1,0 +1,15 @@
+<%= bootstrap_form_with(model: @quote, local: true) do |f| %>
+
+  <% if @quote.errors.any? %>
+    <p><%= pluralize(@quote.errors.count, 'error') %></p>
+
+    <% @quote.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+
+  <%= f.text_area :content %>
+
+  <%= f.primary "Save" %>
+
+<% end %>

@@ -4,12 +4,42 @@ class QuotesController < ApplicationController
     @quotes = Quote.readonly.all
   end
 
-  def new
+  def show
+    @quote = Quote.readonly.find(params[:id])
+  end
 
+  def new
+    @quote = Quote.new
+  end
+
+  def edit
+    @quote = Quote.find(params[:id])
   end
 
   def create
-    Quote.create(quote_params)
+    @quote = Quote.new(quote_params)
+
+    if @quote.save
+      redirect_to quotes_path
+    else
+      render 'new'
+    end
+  end
+
+  def update
+    @quote = Quote.find(params[:id])
+
+    if @quote.update(quote_params)
+      redirect_to quotes_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @quote = Quote.find(params[:id])
+    @quote.destroy
+
     redirect_to quotes_path
   end
 

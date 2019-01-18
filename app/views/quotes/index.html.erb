@@ -1,7 +1,11 @@
-<h1>Anonymous Quotes</h1>
-
-<%= link_to 'Add new quote', new_quote_path %>
+<div>
+  <h1>Anonymous Quotes</h1>
+  <%= button_to "Add new quote", new_quote_path, class: "btn btn-success", method: :get %>
+</div>
 
 <% @quotes.each do |quote| %>
-  <p><%= quote.content %></p>
+  <h4><%= quote.content %></h4>
+  <%= button_to "Details", quote_path(quote), class: "btn btn-secondary", method: :get %>
+  <%= button_to "Edit", edit_quote_path(quote), class: "btn btn-primary", method: :get %>
+  <%= button_to "Delete", quote_path(quote), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?'} %>
 <% end %>
