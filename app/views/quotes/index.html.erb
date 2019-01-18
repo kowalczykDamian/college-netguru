@@ -1,0 +1,7 @@
+<h1>Anonymous Quotes</h1>
+
+<%= link_to 'Add new quote', new_quote_path %>
+
+<% @quotes.each do |quote| %>
+  <p><%= quote.content %></p>
+<% end %>
