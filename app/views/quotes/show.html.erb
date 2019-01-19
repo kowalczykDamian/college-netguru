@@ -8,20 +8,10 @@
 <%= button_to "Delete", quote_path(@quote), class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?'} %>
 
 
-
-
 <h5>Add comment</h5>
-<%= bootstrap_form_with(model: [@quote, @quote.comments.build ], local: true) do |f| %>
-
-  <%= f.text_field :nick %>
-  <%= f.text_area :body %>
-
-  <%= f.primary "Save" %>
-
-<% end %>
+<%= render 'comments/form' %>
 
 
 <h5>Comments</h5>
-<% @quote.comments.each do |comment| %>
-  <i> <strong><%= comment.nick %> </strong> <%= comment.body %> </i></br>
-<% end %>
+<%= render @quote.comments.select(&:persisted?) %>
+

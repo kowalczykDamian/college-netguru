@@ -1,0 +1,9 @@
+<%= bootstrap_form_with(model: [@quote, @quote.comments.build ], local: true) do |f| %>
+
+  <p>Nick should have minimum 3 characters.</p>
+  <%= f.text_field :nick %>
+  <%= f.text_area :body %>
+
+  <%= f.primary "Save" %>
+
+<% end %>
