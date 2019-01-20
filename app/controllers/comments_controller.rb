@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  http_basic_authenticate_with name: "admin", password: "admin", only: :destroy
+  
   def create
     @quote = Quote.find(params[:quote_id])
     @comment = @quote.comments.create(comment_params)
