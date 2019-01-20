@@ -2,4 +2,5 @@
 
 <%= render 'form' %>
 
-<%= button_to "Return", quotes_path, class: "btn btn-secondary", method: :get %>
+<%= link_to "Return", quote_path(@quote), class: "btn btn-secondary" %>
+

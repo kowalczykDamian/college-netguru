@@ -10,6 +10,17 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="<%= quotes_path %>">Anonymous Quotes</a>
+      <form class="form-inline">
+        <%= link_to "Add new quote", new_quote_path, class: 'btn btn-outline-success' %>
+      </form>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>
