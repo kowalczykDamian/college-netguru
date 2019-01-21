@@ -5,18 +5,24 @@
 </div>
 
 
-<%= link_to "Return", quotes_path, class: 'btn btn-outline-secondary' %>
-<%= link_to "Edit", edit_quote_path(@quote), class: 'btn btn-outline-primary' %>
-<%= link_to "Delete", quote_path(@quote), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Are you sure?'} %>
+<div class="row">
+  <div class="col-sm">
+    <%= link_to "Return", quotes_path, class: 'btn btn-outline-secondary' %>
+    <%= link_to "Edit", edit_quote_path(@quote), class: 'btn btn-outline-primary' %>
+    <%= link_to "Delete", quote_path(@quote), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Are you sure?'} %>
+  </div>
+  <div class="col-sm">
+    <i>Last updated: <%= @quote.updated_at %></i>
+  </div>
+</div>
 
+</br></br>
 
-<i>Last updated: <%= @quote.updated_at %></i>
+<h4>Add comment</h4>
+<i><%= render 'comments/form' %></i>
 
+</br></br>
 
-<h5>Add comment</h5>
-<%= render 'comments/form' %>
-
-
-<h5>Comments</h5>
+<h4>Comments</h4>
 <%= render @quote.comments.select(&:persisted?) %>
 
