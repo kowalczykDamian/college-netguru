@@ -1,0 +1,15 @@
+
+<% @quotes.each do |quote| %>
+
+  <a id='link-show' href="<%= quote_path(quote) %>">
+
+    <div id="fancy-quote" class="effect">
+      <blockquote><%= quote.content %></blockquote>
+      <cite>Anonymous</cite>
+    </div>
+
+  </a>
+
+<% end %>
+
+
