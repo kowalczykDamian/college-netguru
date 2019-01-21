@@ -1,24 +1,16 @@
-# README
+# Anonymous Quotes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Username: `admin`
 
-Things you may want to cover:
+Password: `admin`
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
 
 * Database initialization
+```
+rails db:migrate
 
-* How to run the test suite
+rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby version 2.6.0
